@@ -3,22 +3,40 @@
 [ext_resource type="Script" uid="uid://cp8h1ky1fwvhs" path="res://scenes/watch/watch.gd" id="1_d4mxv"]
 [ext_resource type="PackedScene" uid="uid://bscvb5cnf24kd" path="res://scenes/watch/gear/gear.tscn" id="1_dfm8d"]
 [ext_resource type="PackedScene" uid="uid://0ijfod5uxjbd" path="res://scenes/player/player.tscn" id="2_6srqp"]
+[ext_resource type="PackedScene" uid="uid://ddfj5yq223i4g" path="res://scenes/watch/platforms/platform.tscn" id="2_nv6nr"]
 [ext_resource type="PackedScene" uid="uid://basnad4clu0t7" path="res://scenes/shop/ground/ground.tscn" id="3_q6gff"]
 
 [node name="Watch" type="Node2D" unique_id=1601395757]
 script = ExtResource("1_d4mxv")
 
+[node name="Platforms" type="Node2D" parent="." unique_id=1604244117]
+
+[node name="Platform" parent="Platforms" unique_id=1403932720 instance=ExtResource("2_nv6nr")]
+position = Vector2(196, 236)
+
+[node name="Platform2" parent="Platforms" unique_id=1574623764 instance=ExtResource("2_nv6nr")]
+position = Vector2(283, 176)
+
+[node name="Platform3" parent="Platforms" unique_id=99571347 instance=ExtResource("2_nv6nr")]
+position = Vector2(437, 205)
+
+[node name="Platform4" parent="Platforms" unique_id=1103145725 instance=ExtResource("2_nv6nr")]
+position = Vector2(612, 129)
+
+[node name="Platform5" parent="Platforms" unique_id=513780954 instance=ExtResource("2_nv6nr")]
+position = Vector2(101, 107)
+
 [node name="Gears" type="Node2D" parent="." unique_id=1380636468]
 unique_name_in_owner = true
 
 [node name="Gear" parent="Gears" unique_id=1252970662 instance=ExtResource("1_dfm8d")]
-position = Vector2(445, 318)
+position = Vector2(535, 178)
 
 [node name="Gear2" parent="Gears" unique_id=1196473469 instance=ExtResource("1_dfm8d")]
-position = Vector2(278, 316)
+position = Vector2(103, 47)
 
 [node name="Player" parent="." unique_id=2002699047 instance=ExtResource("2_6srqp")]
-position = Vector2(298, 167)
+position = Vector2(114, 308)
 
 [node name="Ground" parent="." unique_id=523757785 instance=ExtResource("3_q6gff")]
 position = Vector2(161, 347)

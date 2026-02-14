@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://dd0dd3bpqcn12" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://bghkq6oamqf40" path="res://scenes/player/Sprite-0009.png" id="2_dovo2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8afob"]
-size = Vector2(40, 40)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dovo2"]
+height = 38.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8afob"]
-radius = 50.08992
+radius = 32.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2002699047]
 z_index = 1
@@ -17,10 +17,11 @@ script = ExtResource("1_8afob")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=954679802]
 texture_filter = 1
+position = Vector2(0, -4)
 texture = ExtResource("2_dovo2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1764915389]
-shape = SubResource("RectangleShape2D_8afob")
+shape = SubResource("CapsuleShape2D_dovo2")
 
 [node name="Interaction" type="Area2D" parent="." unique_id=2038586233]
 unique_name_in_owner = true
