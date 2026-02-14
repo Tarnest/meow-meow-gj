@@ -2,10 +2,16 @@ class_name Player
 extends CharacterBody2D
 
 @onready var interaction: Area2D = %Interaction
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 var gravity: float = 20
 var speed: int = 250
-var direction_x: int = 0
+var direction_x: int:
+	set(dir):
+		last_direction = direction_x if direction_x != 0 else last_direction
+		direction_x = dir
+
+var last_direction: int = 1
 
 var jump_speed: int = 320
 var jump_timer: float = 0.0
@@ -31,6 +37,13 @@ func _physics_process(delta: float) -> void:
 		jump_velocity = 0
 	if !is_on_floor():
 		velocity.y += gravity
+	
+	direction_x = 0
+	
+	if Input.is_action_pressed("move_left"):
+		direction_x += -1
+	if Input.is_action_pressed("move_right"):
+		direction_x += 1
 	
 	velocity.x = lerpf(velocity.x, direction_x * speed, 0.1)
 	
