@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bm5f4np6qwqrl"]
+
+[ext_resource type="Script" uid="uid://3h6x2ip31bbm" path="res://scenes/start/start_button.gd" id="1_662lp"]
+[ext_resource type="Script" uid="uid://d00b8idgicc5g" path="res://scenes/start/exit_button.gd" id="2_oeh0t"]
+
+[node name="Start" type="Node2D" unique_id=172487091]
+
+[node name="StartButton" type="Button" parent="." unique_id=1914675859]
+offset_left = 218.0
+offset_top = 182.0
+offset_right = 409.0
+offset_bottom = 228.0
+text = "Start :3"
+script = ExtResource("1_662lp")
+
+[node name="ExitButton" type="Button" parent="." unique_id=164177252]
+offset_left = 223.0
+offset_top = 257.0
+offset_right = 322.0
+offset_bottom = 304.0
+text = "BYE"
+script = ExtResource("2_oeh0t")
