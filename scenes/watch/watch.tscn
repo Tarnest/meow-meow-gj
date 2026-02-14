@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://0r2x60uhgp2f"]
+
+[ext_resource type="PackedScene" uid="uid://bscvb5cnf24kd" path="res://scenes/watch/gear/gear.tscn" id="1_dfm8d"]
+
+[node name="Watch" type="Node2D" unique_id=1601395757]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=24567124]
+position = Vector2(11, 1)
+zoom = Vector2(4, 4)
+
+[node name="Gear" parent="." unique_id=1252970662 instance=ExtResource("1_dfm8d")]

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bscvb5cnf24kd"]
+
+[ext_resource type="Script" uid="uid://cqfjo5y8lphro" path="res://scenes/watch/gear/gear.gd" id="1_1pcvi"]
+[ext_resource type="Texture2D" uid="uid://cydkk8mabklqq" path="res://scenes/watch/gear/gear_sprite_placeholder.png" id="1_1ux4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pcvi"]
+
+[node name="Gear" type="Area2D" unique_id=1252970662]
+script = ExtResource("1_1pcvi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1202345542]
+position = Vector2(-0.15320277, 0.18749504)
+scale = Vector2(0.040775914, 0.058234453)
+texture = ExtResource("1_1ux4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=322811698]
+shape = SubResource("RectangleShape2D_1pcvi")
