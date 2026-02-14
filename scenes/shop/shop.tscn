@@ -11,10 +11,6 @@
 [node name="Player" parent="." unique_id=2002699047 instance=ExtResource("1_100s2")]
 position = Vector2(151, 288)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1745434122]
-position = Vector2(0, -17)
-position_smoothing_enabled = true
-
 [node name="EntryPoint" parent="." unique_id=1421819112 instance=ExtResource("2_qaxay")]
 position = Vector2(499, 287)
 switch_to_scene = ExtResource("3_7lxhl")
