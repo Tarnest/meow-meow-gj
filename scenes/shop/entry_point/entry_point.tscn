@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bathwhr7vp2b4"]
+
+[ext_resource type="Script" uid="uid://cfs664cwcuyb4" path="res://scenes/shop/entry_point/entry_point.gd" id="1_jonkj"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jonkj"]
+size = Vector2(50, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jonkj"]
+size = Vector2(50, 100)
+
+[node name="EntryPoint" type="Area2D" unique_id=1421819112]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_jonkj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=271411261]
+texture = SubResource("PlaceholderTexture2D_jonkj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=242531201]
+shape = SubResource("RectangleShape2D_jonkj")
