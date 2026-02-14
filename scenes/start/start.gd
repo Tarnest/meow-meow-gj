@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var start_button: Button = $CanvasLayer/StartButton
-@onready var exit_button: Button = $CanvasLayer/ExitButton
+@onready var start_button: Button = $CanvasLayer/GridContainer/StartButton
+@onready var exit_button: Button = $CanvasLayer/GridContainer/ExitButton
 
 var prev_button: int = 1
 

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://hqe0pkawyxl" path="res://scenes/start/start.gd" id="1_1eg8k"]
 [ext_resource type="Script" uid="uid://3h6x2ip31bbm" path="res://scenes/start/start_button.gd" id="1_662lp"]
 [ext_resource type="Script" uid="uid://d00b8idgicc5g" path="res://scenes/start/exit_button.gd" id="2_oeh0t"]
+[ext_resource type="Theme" uid="uid://eu2bk7lq076" path="res://assets/text_theme.tres" id="2_stwfd"]
 [ext_resource type="Texture2D" uid="uid://33kdcc5vr0fx" path="res://scenes/start/start_screen_spritesheet.png" id="4_1eg8k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_stwfd"]
@@ -65,39 +66,42 @@ script = ExtResource("1_1eg8k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1163604259]
 
-[node name="StartButton" type="Button" parent="CanvasLayer" unique_id=1914675859]
-offset_left = 57.0
-offset_top = 164.0
-offset_right = 192.0
-offset_bottom = 210.0
-text = "Start :3"
-script = ExtResource("1_662lp")
+[node name="TitleContainer" type="GridContainer" parent="CanvasLayer" unique_id=607571427]
+offset_left = 39.0
+offset_top = 41.0
+offset_right = 180.0
+offset_bottom = 162.0
+theme = ExtResource("2_stwfd")
 
-[node name="ExitButton" type="Button" parent="CanvasLayer" unique_id=164177252]
-offset_left = 55.0
-offset_top = 250.0
-offset_right = 182.0
-offset_bottom = 297.0
-text = "BYE"
-script = ExtResource("2_oeh0t")
-
-[node name="TitleSub" type="Label" parent="CanvasLayer" unique_id=583170614]
-modulate = Color(0, 0, 0, 1)
-offset_left = 57.0
-offset_top = 29.0
-offset_right = 183.0
-offset_bottom = 94.0
+[node name="TitleSub" type="Label" parent="CanvasLayer/TitleContainer" unique_id=583170614]
+layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "The"
 
-[node name="TitleMain" type="Label" parent="CanvasLayer" unique_id=1329315453]
-modulate = Color(0, 0, 0, 1)
-offset_left = 60.0
-offset_top = 55.0
-offset_right = 203.0
-offset_bottom = 129.0
+[node name="TitleMain" type="Label" parent="CanvasLayer/TitleContainer" unique_id=1329315453]
+layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Fixler"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer" unique_id=4834036]
+offset_left = 44.0
+offset_top = 182.0
+offset_right = 156.0
+offset_bottom = 297.5
+theme = ExtResource("2_stwfd")
+theme_override_constants/v_separation = 29
+
+[node name="StartButton" type="Button" parent="CanvasLayer/GridContainer" unique_id=1914675859]
+layout_mode = 2
+text = "Start"
+alignment = 0
+script = ExtResource("1_662lp")
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/GridContainer" unique_id=164177252]
+layout_mode = 2
+text = "Exit"
+alignment = 0
+script = ExtResource("2_oeh0t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1502997940]
 position = Vector2(321, 181)
