@@ -11,6 +11,7 @@ size = Vector2(3000, 50)
 [node name="Shop" type="Node2D" unique_id=2133320849]
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1295891460]
+collision_mask = 2
 
 [node name="Ground" type="Sprite2D" parent="Ground" unique_id=419160767]
 position = Vector2(500, 623)
