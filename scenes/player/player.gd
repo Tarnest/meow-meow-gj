@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 				interactable.interact()
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump_velocity = -jump_speed - abs(direction_x * speed) / 3
+		jump_velocity = -jump_speed - abs(direction_x * speed) / 4
 		animate_jump()
 	if Input.is_action_pressed("jump") and jump_timer < 0.1:
 		velocity.y = jump_velocity
