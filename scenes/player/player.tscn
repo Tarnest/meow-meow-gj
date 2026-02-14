@@ -10,8 +10,9 @@ size = Vector2(40, 40)
 radius = 50.08992
 
 [node name="Player" type="CharacterBody2D" unique_id=2002699047]
+z_index = 1
 collision_layer = 2
-collision_mask = 13
+collision_mask = 5
 script = ExtResource("1_8afob")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=954679802]
