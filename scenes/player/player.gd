@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var interaction: Area2D = %Interaction
@@ -11,12 +12,6 @@ var jump_timer: float = 0.0
 var jump_velocity: float = 0.0
 
 func _physics_process(delta: float) -> void:
-	direction_x = 0
-	
-	if Input.is_action_pressed("move_left"):
-		direction_x += -1
-	if Input.is_action_pressed("move_right"):
-		direction_x += 1
 	if Input.is_action_just_pressed("interact"):
 		var areas: Array[Area2D] = interaction.get_overlapping_areas()
 		for area in areas:
@@ -38,4 +33,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity
 	
 	velocity.x = lerpf(velocity.x, direction_x * speed, 0.1)
+	
 	move_and_slide()
+	
+	

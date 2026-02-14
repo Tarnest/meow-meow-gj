@@ -23,8 +23,6 @@ texture_filter = 1
 position = Vector2(0, -4)
 texture = ExtResource("2_dovo2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=469283633]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1764915389]
 shape = SubResource("CapsuleShape2D_dovo2")
 
@@ -40,14 +38,10 @@ shape = SubResource("CircleShape2D_8afob")
 script = ExtResource("6_75vfm")
 state = NodePath("Idle")
 
-[node name="Idle" type="Node2D" parent="PlayerStateMachine" unique_id=1580986199 node_paths=PackedStringArray("player")]
-unique_name_in_owner = true
+[node name="Idle" type="Node2D" parent="PlayerStateMachine" unique_id=1580986199]
 script = ExtResource("4_75vfm")
-player = NodePath("../..")
 metadata/_custom_type_script = "uid://b6p3xg02blqnc"
 
-[node name="Move" type="Node2D" parent="PlayerStateMachine" unique_id=1837510424 node_paths=PackedStringArray("player")]
-unique_name_in_owner = true
+[node name="Move" type="Node2D" parent="PlayerStateMachine" unique_id=1837510424]
 script = ExtResource("5_0owmy")
-player = NodePath("../..")
 metadata/_custom_type_script = "uid://xo4mcr3tcqgv"
