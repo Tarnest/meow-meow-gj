@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump_velocity = -jump_speed - abs(direction_x * speed) / 3
+		animate_jump()
 	if Input.is_action_pressed("jump") and jump_timer < 0.1:
 		velocity.y = jump_velocity
 		jump_timer += delta
@@ -37,6 +38,7 @@ func _physics_process(delta: float) -> void:
 		jump_velocity = 0
 	if !is_on_floor():
 		velocity.y += gravity
+		animate_fall()
 	
 	direction_x = 0
 	
@@ -48,5 +50,20 @@ func _physics_process(delta: float) -> void:
 	velocity.x = lerpf(velocity.x, direction_x * speed, 0.1)
 	
 	move_and_slide()
+
+func animate_fall() -> void:
+	if animation_player.is_playing():
+		return
 	
-	
+	match last_direction:
+		1:
+			animation_player.play("fall_right")
+		-1:
+			animation_player.play("fall_left")
+
+func animate_jump() -> void:
+	match last_direction:
+		1:
+			animation_player.play("jump_right")
+		-1:
+			animation_player.play("jump_left")
