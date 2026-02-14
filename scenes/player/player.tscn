@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dd0dd3bpqcn12" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://bghkq6oamqf40" path="res://scenes/player/Sprite-0009.png" id="2_dovo2"]
+[ext_resource type="Script" uid="uid://c3uxfn5o0v71i" path="res://classes/state_machine.gd" id="3_p47bc"]
+[ext_resource type="Script" uid="uid://b6p3xg02blqnc" path="res://scenes/player/states/idle.gd" id="4_75vfm"]
+[ext_resource type="Script" uid="uid://xo4mcr3tcqgv" path="res://scenes/player/states/move.gd" id="5_0owmy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dovo2"]
 height = 38.0
@@ -30,3 +33,15 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction" unique_id=672323205]
 shape = SubResource("CircleShape2D_8afob")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1212453111]
+script = ExtResource("3_p47bc")
+metadata/_custom_type_script = "uid://c3uxfn5o0v71i"
+
+[node name="Idle" type="Node2D" parent="StateMachine" unique_id=1580986199]
+script = ExtResource("4_75vfm")
+metadata/_custom_type_script = "uid://b6p3xg02blqnc"
+
+[node name="Move" type="Node2D" parent="StateMachine" unique_id=1837510424]
+script = ExtResource("5_0owmy")
+metadata/_custom_type_script = "uid://xo4mcr3tcqgv"
