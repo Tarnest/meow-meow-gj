@@ -1,25 +1,31 @@
 [gd_scene format=3 uid="uid://da6760vadt1w7"]
 
 [ext_resource type="PackedScene" uid="uid://0ijfod5uxjbd" path="res://scenes/player/player.tscn" id="1_100s2"]
+[ext_resource type="PackedScene" uid="uid://bathwhr7vp2b4" path="res://scenes/shop/entry_point/entry_point.tscn" id="2_qaxay"]
+[ext_resource type="PackedScene" uid="uid://cie576w0fthva" path="res://dummy/dummy_scene.tscn" id="3_7lxhl"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7r02r"]
-size = Vector2(3000, 50)
+size = Vector2(3000, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r02r"]
-size = Vector2(3000, 50)
+size = Vector2(3000, 25)
 
 [node name="Shop" type="Node2D" unique_id=2133320849]
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1295891460]
+position = Vector2(500, 350)
 collision_mask = 2
 
 [node name="Ground" type="Sprite2D" parent="Ground" unique_id=419160767]
-position = Vector2(500, 623)
 texture = SubResource("PlaceholderTexture2D_7r02r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1658052484]
-position = Vector2(500, 623)
 shape = SubResource("RectangleShape2D_7r02r")
 
 [node name="Player" parent="." unique_id=2002699047 instance=ExtResource("1_100s2")]
-position = Vector2(505, 465)
+z_index = 1
+position = Vector2(151, 288)
+
+[node name="EntryPoint" parent="." unique_id=1421819112 instance=ExtResource("2_qaxay")]
+position = Vector2(499, 287)
+switch_to_scene = ExtResource("3_7lxhl")

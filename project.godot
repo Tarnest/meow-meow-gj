@@ -23,6 +23,13 @@ gdscript/warnings/unsafe_method_access=2
 gdscript/warnings/unsafe_cast=1
 gdscript/warnings/unsafe_call_argument=2
 
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+
 [input]
 
 move_right={
@@ -52,6 +59,7 @@ interact={
 
 2d_physics/layer_1="Platforms"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="Door"
 
 [physics]
 
