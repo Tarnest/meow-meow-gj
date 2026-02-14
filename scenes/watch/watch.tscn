@@ -1,11 +1,29 @@
 [gd_scene format=3 uid="uid://0r2x60uhgp2f"]
 
 [ext_resource type="PackedScene" uid="uid://bscvb5cnf24kd" path="res://scenes/watch/gear/gear.tscn" id="1_dfm8d"]
+[ext_resource type="PackedScene" uid="uid://0ijfod5uxjbd" path="res://scenes/player/player.tscn" id="2_6srqp"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q6gff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6srqp"]
+size = Vector2(81, 20)
 
 [node name="Watch" type="Node2D" unique_id=1601395757]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=24567124]
 position = Vector2(11, 1)
-zoom = Vector2(4, 4)
 
 [node name="Gear" parent="." unique_id=1252970662 instance=ExtResource("1_dfm8d")]
+
+[node name="Player" parent="." unique_id=2002699047 instance=ExtResource("2_6srqp")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1280411311]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1233755185]
+position = Vector2(7.0000076, 33)
+scale = Vector2(83.5, 10.5)
+texture = SubResource("PlaceholderTexture2D_q6gff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1845210771]
+position = Vector2(7.5, 38)
+shape = SubResource("RectangleShape2D_6srqp")
