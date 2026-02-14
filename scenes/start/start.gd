@@ -4,6 +4,8 @@ extends Node2D
 @onready var start_button: Button = $CanvasLayer/StartButton
 @onready var exit_button: Button = $CanvasLayer/ExitButton
 
+var prev_button: int = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_button.mouse_entered.connect(_mouse_entered_start_btn)
@@ -16,10 +18,14 @@ func _process(delta: float) -> void:
 	pass
 
 func _mouse_entered_start_btn() -> void:
-	animated_sprite.play("start")
+	if prev_button != 0:
+		animated_sprite.play("start")
+		prev_button = 0
 	
 func _mouse_entered_exit_btn() -> void:
-	animated_sprite.play("exit")
+	if prev_button != 1:
+		animated_sprite.play("exit")
+		prev_button = 1
 	
 func _mouse_exited() -> void:
 	pass

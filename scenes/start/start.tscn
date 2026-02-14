@@ -3,14 +3,30 @@
 [ext_resource type="Script" uid="uid://hqe0pkawyxl" path="res://scenes/start/start.gd" id="1_1eg8k"]
 [ext_resource type="Script" uid="uid://3h6x2ip31bbm" path="res://scenes/start/start_button.gd" id="1_662lp"]
 [ext_resource type="Script" uid="uid://d00b8idgicc5g" path="res://scenes/start/exit_button.gd" id="2_oeh0t"]
-[ext_resource type="Texture2D" uid="uid://ce2glmvdocgqb" path="res://scenes/start/start_screen_spritesheet_placeholder.png" id="3_ae20m"]
+[ext_resource type="Texture2D" uid="uid://33kdcc5vr0fx" path="res://scenes/start/start_screen_spritesheet.png" id="4_1eg8k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_stwfd"]
-atlas = ExtResource("3_ae20m")
+atlas = ExtResource("4_1eg8k")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0stv2"]
+atlas = ExtResource("4_1eg8k")
 region = Rect2(640, 0, 640, 360)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1eg8k"]
-atlas = ExtResource("3_ae20m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqbev"]
+atlas = ExtResource("4_1eg8k")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmgyj"]
+atlas = ExtResource("4_1eg8k")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xo6f"]
+atlas = ExtResource("4_1eg8k")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjlbs"]
+atlas = ExtResource("4_1eg8k")
 region = Rect2(0, 0, 640, 360)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0stv2"]
@@ -18,18 +34,30 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_stwfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0stv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqbev")
 }],
-"loop": true,
+"loop": false,
 "name": &"exit",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1eg8k")
+"texture": SubResource("AtlasTexture_pmgyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xo6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjlbs")
 }],
-"loop": true,
+"loop": false,
 "name": &"start",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="Start" type="Node2D" unique_id=172487091]
@@ -74,4 +102,4 @@ text = "Fixler"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1502997940]
 position = Vector2(321, 181)
 sprite_frames = SubResource("SpriteFrames_0stv2")
-animation = &"exit"
+animation = &"start"
