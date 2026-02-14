@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="MeowMeowGJ"
+run/main_scene="uid://da6760vadt1w7"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,6 +22,11 @@ gdscript/warnings/unsafe_property_access=2
 gdscript/warnings/unsafe_method_access=2
 gdscript/warnings/unsafe_cast=1
 gdscript/warnings/unsafe_call_argument=2
+
+[layer_names]
+
+2d_physics/layer_1="Platforms"
+2d_physics/layer_2="Player"
 
 [physics]
 
