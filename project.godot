@@ -15,6 +15,10 @@ run/main_scene="uid://da6760vadt1w7"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://dc2oej84rmg4x"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=2
@@ -59,8 +63,7 @@ interact={
 
 2d_physics/layer_1="Platforms"
 2d_physics/layer_2="Player"
-2d_physics/layer_3="Door"
-2d_physics/layer_4="Gear"
+2d_physics/layer_3="Interactable"
 
 [physics]
 

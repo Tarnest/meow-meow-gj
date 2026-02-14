@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 @onready var interaction: Area2D = %Interaction
 
-var gravity: float = 5000
+var gravity: float = 3000
 var speed: int = 300
-var jump_speed: int = 1200
+var jump_speed: int = 600
 var direction_x: int = 0
 
 func _physics_process(delta: float) -> void:
@@ -19,9 +19,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		var areas: Array[Area2D] = interaction.get_overlapping_areas()
 		for area in areas:
-			if area is EntryPoint:
-				var entry_point: EntryPoint = area
-				entry_point.interact()
+			if area is Interactable:
+				var interactable: Interactable = area
+				interactable.interact()
 	
 	velocity.x = direction_x * speed
 	velocity.y += gravity * delta

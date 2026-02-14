@@ -1,5 +1,4 @@
-class_name EntryPoint
-extends Area2D
+extends Interactable
 
 @export var switch_to_scene: PackedScene
 
