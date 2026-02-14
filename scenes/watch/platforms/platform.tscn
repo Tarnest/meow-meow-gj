@@ -4,12 +4,13 @@
 size = Vector2(100, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpqwu"]
-size = Vector2(100, 14)
+size = Vector2(30, 14)
 
 [node name="Platform" type="StaticBody2D" unique_id=1403932720]
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1567448570]
+scale = Vector2(0.29999998, 1)
 texture = SubResource("PlaceholderTexture2D_xpqwu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1202473810]
