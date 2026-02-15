@@ -13,10 +13,6 @@ func _ready() -> void:
 	exit_button.mouse_entered.connect(_mouse_entered_exit_btn)
 	exit_button.mouse_exited.connect(_mouse_exited)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _mouse_entered_start_btn() -> void:
 	if prev_button != 0:
 		animated_sprite.play("start")

@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var start_scene: PackedScene
 @onready var gears: Node2D = %Gears
 
 func _ready() -> void:
@@ -14,3 +15,4 @@ func check_gears() -> void:
 				return
 	print("all gears clean!")
 	# Add Win State
+	Global.switch_scene(start_scene)

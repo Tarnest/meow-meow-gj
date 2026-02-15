@@ -104,6 +104,7 @@ alignment = 0
 script = ExtResource("2_oeh0t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1502997940]
+texture_filter = 1
 position = Vector2(321, 181)
 sprite_frames = SubResource("SpriteFrames_0stv2")
 animation = &"start"
