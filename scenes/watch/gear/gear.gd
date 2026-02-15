@@ -2,6 +2,7 @@ class_name Gear
 extends Interactable
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var gear_fixed_sound: AudioStreamPlayer2D = %GearFixedSound
 var is_clean: bool = false
 
 func _ready() -> void:
@@ -15,4 +16,5 @@ func clean() -> void:
 	is_clean = true
 	animation_player.play("clean")
 	print("clean")
+	gear_fixed_sound.play()
 	Global.check_gears.emit()

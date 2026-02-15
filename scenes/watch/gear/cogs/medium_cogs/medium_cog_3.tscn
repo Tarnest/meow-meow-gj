@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqfjo5y8lphro" path="res://scenes/watch/gear/gear.gd" id="1_j34lo"]
 [ext_resource type="Texture2D" uid="uid://7v7raogsp6eu" path="res://scenes/watch/gear/cogs/medium_cogs/cog_6_spritesheet.png" id="2_bkwhp"]
+[ext_resource type="PackedScene" uid="uid://1w4o3f0ijul6" path="res://scenes/watch/gear/gear_fixed_sound.tscn" id="3_bkwhp"]
 
 [sub_resource type="Animation" id="Animation_1pcvi"]
 length = 0.001
@@ -78,3 +79,7 @@ vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=322811698]
 shape = SubResource("CircleShape2D_1pcvi")
+
+[node name="GearFixedSound" parent="." unique_id=68984597 instance=ExtResource("3_bkwhp")]
+unique_name_in_owner = true
+max_distance = 500.0
