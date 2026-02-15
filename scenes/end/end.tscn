@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://c8d8ndjwbr4qh"]
+
+[ext_resource type="Theme" uid="uid://eu2bk7lq076" path="res://assets/text_theme.tres" id="1_8srqk"]
+[ext_resource type="Texture2D" uid="uid://df5evfi7v2uq6" path="res://scenes/end/end_screen_spritesheet.png" id="1_orl65"]
+[ext_resource type="Script" uid="uid://c2edl1kvvw07n" path="res://scenes/end/back_to_menu.gd" id="2_p1qr3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8srqk"]
+atlas = ExtResource("1_orl65")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1qr3"]
+atlas = ExtResource("1_orl65")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqgb4"]
+atlas = ExtResource("1_orl65")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx7h6"]
+atlas = ExtResource("1_orl65")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m21k2"]
+atlas = ExtResource("1_orl65")
+region = Rect2(2560, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0qqq"]
+atlas = ExtResource("1_orl65")
+region = Rect2(3200, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opbuc"]
+atlas = ExtResource("1_orl65")
+region = Rect2(3840, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oag6p"]
+atlas = ExtResource("1_orl65")
+region = Rect2(4480, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1k0n"]
+atlas = ExtResource("1_orl65")
+region = Rect2(5120, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3clya"]
+atlas = ExtResource("1_orl65")
+region = Rect2(5760, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_klmf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8srqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1qr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqgb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx7h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m21k2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0qqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opbuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oag6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1k0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3clya")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="End" type="Node2D" unique_id=494480873]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=811996813]
+
+[node name="Text" type="GridContainer" parent="CanvasLayer" unique_id=1140083791]
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 381.0
+offset_bottom = 59.0
+theme = ExtResource("1_8srqk")
+
+[node name="Label" type="Label" parent="CanvasLayer/Text" unique_id=527674081]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Good work,"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Text" unique_id=1531457794]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.75, 0.75, 1)
+text = "Fixler!"
+
+[node name="Options" type="GridContainer" parent="CanvasLayer" unique_id=291289082]
+offset_left = 20.0
+offset_top = 311.0
+offset_right = 134.0
+offset_bottom = 351.0
+theme = ExtResource("1_8srqk")
+
+[node name="BackToMenu" type="Button" parent="CanvasLayer/Options" unique_id=1170365857]
+layout_mode = 2
+text = "Back to Menu"
+script = ExtResource("2_p1qr3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1569854302]
+position = Vector2(320, 180)
+sprite_frames = SubResource("SpriteFrames_klmf7")
