@@ -12,5 +12,5 @@ autoplay = true
 
 [node name="Ticking" type="AudioStreamPlayer2D" parent="." unique_id=1184153228]
 stream = ExtResource("2_6h67s")
-volume_db = -13.194
+volume_db = -10.0
 autoplay = true

@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bfqh73566j8l8" path="res://scenes/player/states/clean.gd" id="6_qek5x"]
 [ext_resource type="Texture2D" uid="uid://01vce3n1mv4r" path="res://scenes/player/clean_left_spritesheet.png" id="7_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://p780u2ck10uw" path="res://scenes/player/clean_right_spritesheet.png" id="8_h17s1"]
+[ext_resource type="AudioStream" uid="uid://btcwudk1ypi1x" path="res://sounds/clean/squeaky-clean.mp3" id="9_5gtgg"]
 
 [sub_resource type="Animation" id="Animation_75vfm"]
 length = 0.001
@@ -205,6 +206,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [6, 7, 8, 9, 10, 11, 12, 13]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CleanSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_fcs02"]
 length = 0.6
@@ -219,6 +234,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [14, 15, 16, 17, 18, 19]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CleanSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.23333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_myrg7"]
@@ -251,6 +280,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [6, 7, 8, 9, 10, 11, 12, 13]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CleanSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_uf5tr"]
 length = 0.6
@@ -265,6 +308,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [14, 15, 16, 17, 18, 19]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CleanSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.23333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_lgqa7"]
@@ -366,3 +423,7 @@ visible = false
 position = Vector2(0, -4)
 texture = ExtResource("8_h17s1")
 hframes = 20
+
+[node name="CleanSound" type="AudioStreamPlayer2D" parent="." unique_id=1646777363]
+unique_name_in_owner = true
+stream = ExtResource("9_5gtgg")

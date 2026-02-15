@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _enter() -> void:
 	set_physics_process(true)
+	player.direction_x = 0
 	match player.last_direction:
 		1:
 			clean_right()
@@ -34,7 +35,6 @@ func clean_left() -> void:
 	
 	# once wind up is done, loop
 	player.animation_player.queue("Clean/clean_left_loop")
-	
 	await get_tree().create_timer(clean_time).timeout
 	
 	# after timer, wind down
@@ -51,7 +51,6 @@ func clean_right() -> void:
 	
 	# once wind up is done, loop
 	player.animation_player.queue("Clean/clean_right_loop")
-	
 	await get_tree().create_timer(clean_time).timeout
 	
 	# after timer, wind down

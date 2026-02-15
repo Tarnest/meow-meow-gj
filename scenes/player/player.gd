@@ -8,6 +8,7 @@ signal clean
 @onready var sprite2d: Sprite2D = %Sprite2D
 @onready var clean_anim_left: Sprite2D = %CleanAnimationLeft
 @onready var clean_anim_right: Sprite2D = %CleanAnimationRight
+@onready var clean_sound: AudioStreamPlayer2D = %CleanSound
 
 var gravity: float = 20
 var speed: int = 250

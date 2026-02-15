@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dkn667rpq0gmi" path="res://scenes/watch/gear/cogs/medium_cogs/medium_cog_3.tscn" id="9_sm5pv"]
 [ext_resource type="PackedScene" uid="uid://dt3p05ik6a1b6" path="res://scenes/watch/gear/cogs/deco_cogs/deco_cog_1.tscn" id="12_b3etc"]
 [ext_resource type="PackedScene" uid="uid://ddnnojx5aq4gq" path="res://scenes/watch/gear/cogs/deco_cogs/deco_cog_2.tscn" id="13_suehv"]
+[ext_resource type="PackedScene" uid="uid://cdw23mtjtfn1d" path="res://scenes/watch/background/background_sound.tscn" id="16_hiv0o"]
 
 [node name="Watch" type="Node2D" unique_id=1601395757]
 script = ExtResource("1_d4mxv")
@@ -66,7 +67,7 @@ position = Vector2(-109, 50)
 position = Vector2(-249, 302)
 
 [node name="SmallCog3" parent="Gears" unique_id=1323788451 instance=ExtResource("7_b3etc")]
-position = Vector2(-187, 301)
+position = Vector2(-154, 300)
 
 [node name="MediumCog3" parent="Gears" unique_id=2092090137 instance=ExtResource("5_ji788")]
 position = Vector2(1269, 2)
@@ -94,3 +95,5 @@ position = Vector2(135, 325)
 
 [node name="DecoCog2" parent="DecoGears" unique_id=8414142 instance=ExtResource("13_suehv")]
 position = Vector2(-295, 156)
+
+[node name="BackgroundSound" parent="." unique_id=518496341 instance=ExtResource("16_hiv0o")]
