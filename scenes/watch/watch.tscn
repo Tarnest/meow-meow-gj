@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cp8h1ky1fwvhs" path="res://scenes/watch/watch.gd" id="1_d4mxv"]
 [ext_resource type="PackedScene" uid="uid://0ijfod5uxjbd" path="res://scenes/player/player.tscn" id="2_6srqp"]
 [ext_resource type="PackedScene" uid="uid://bm5f4np6qwqrl" path="res://scenes/start/start.tscn" id="2_nv6nr"]
+[ext_resource type="Theme" uid="uid://eu2bk7lq076" path="res://assets/text_theme.tres" id="3_sm5pv"]
+[ext_resource type="Texture2D" uid="uid://djugmuiyc60tv" path="res://scenes/watch/gear/gear_counter/cog_icon.png" id="4_hiv0o"]
 [ext_resource type="PackedScene" uid="uid://dmflet3o5gy2o" path="res://scenes/watch/gear/cogs/large_cogs/large_cog_1.tscn" id="4_ualig"]
 [ext_resource type="PackedScene" uid="uid://ctlicl04ex14k" path="res://scenes/watch/gear/cogs/medium_cogs/medium_cog_2.tscn" id="5_ji788"]
 [ext_resource type="PackedScene" uid="uid://eboqofrubrvp" path="res://scenes/tilemap/tile_map_layer.tscn" id="5_nv6nr"]
@@ -17,6 +19,36 @@
 [node name="Watch" type="Node2D" unique_id=1601395757]
 script = ExtResource("1_d4mxv")
 start_scene = ExtResource("2_nv6nr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1908259970]
+
+[node name="GearCounter" type="Node2D" parent="CanvasLayer" unique_id=1852297041]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/GearCounter" unique_id=1511091456]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="GearCounter" type="GridContainer" parent="CanvasLayer/GearCounter/MarginContainer" unique_id=1512795435]
+layout_mode = 2
+theme = ExtResource("3_sm5pv")
+theme_override_constants/h_separation = 15
+columns = 2
+
+[node name="GearIcon" type="TextureRect" parent="CanvasLayer/GearCounter/MarginContainer/GearCounter" unique_id=1122150043]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_hiv0o")
+expand_mode = 2
+
+[node name="GearCountLabel" type="Label" parent="CanvasLayer/GearCounter/MarginContainer/GearCounter" unique_id=641631307]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "9"
 
 [node name="Gears" type="Node2D" parent="." unique_id=1380636468]
 unique_name_in_owner = true
