@@ -1,7 +1,6 @@
-[gd_scene format=3 uid="uid://da6760vadt1w7"]
+[gd_scene format=4 uid="uid://da6760vadt1w7"]
 
 [ext_resource type="PackedScene" uid="uid://0ijfod5uxjbd" path="res://scenes/player/player.tscn" id="1_100s2"]
-[ext_resource type="PackedScene" uid="uid://basnad4clu0t7" path="res://scenes/shop/ground/ground.tscn" id="1_jp048"]
 [ext_resource type="PackedScene" uid="uid://bathwhr7vp2b4" path="res://scenes/shop/entry_point/entry_point.tscn" id="2_qaxay"]
 [ext_resource type="PackedScene" uid="uid://0r2x60uhgp2f" path="res://scenes/watch/watch.tscn" id="3_7lxhl"]
 [ext_resource type="PackedScene" uid="uid://eboqofrubrvp" path="res://scenes/tilemap/tile_map_layer.tscn" id="5_ctpgp"]
@@ -78,9 +77,7 @@ position = Vector2(499, 287)
 switch_to_scene = ExtResource("3_7lxhl")
 
 [node name="TileMapLayer" parent="." unique_id=1532222105 instance=ExtResource("5_ctpgp")]
-
-[node name="Ground" parent="." unique_id=523757785 instance=ExtResource("1_jp048")]
-position = Vector2(229, 349)
+tile_map_data = PackedByteArray("AAAAAA0AAgACAAMAAAABAA0AAgACAAMAAAACAA0AAgACAAMAAAADAA0AAgACAAMAAAAEAA0AAgACAAMAAAAFAA0AAgACAAMAAAAGAA0AAgACAAMAAAAHAA0AAgACAAMAAAAIAA0AAgACAAMAAAAJAA0AAgACAAMAAAAKAA0AAgACAAMAAAALAA0AAgACAAMAAAAMAA0AAgACAAMAAAANAA0AAgACAAMAAAAOAA0AAgACAAMAAAAPAA0AAgACAAMAAAAQAA0AAgACAAMAAAARAA0AAgACAAMAAAASAA0AAgACAAMAAAATAA0AAgACAAMAAAAUAA0AAgACAAMAAAAVAA0AAgACAAMAAAAWAA0AAgACAAMAAAAXAA0AAgACAAMAAAAYAA0AAgACAAMAAAAZAA0AAgACAAMAAAAaAA0AAgACAAMAAAAAAA4AAgACAAMAAAABAA4AAgACAAMAAAACAA4AAgACAAMAAAADAA4AAgACAAMAAAAEAA4AAgACAAMAAAAFAA4AAgACAAMAAAAGAA4AAgACAAMAAAAHAA4AAgACAAMAAAAIAA4AAgACAAMAAAAJAA4AAgACAAMAAAAKAA4AAgACAAMAAAALAA4AAgACAAMAAAAMAA4AAgACAAMAAAANAA4AAgACAAMAAAAOAA4AAgACAAMAAAAPAA4AAgACAAMAAAAQAA4AAgACAAMAAAARAA4AAgACAAMAAAASAA4AAgACAAMAAAATAA4AAgACAAMAAAAUAA4AAgACAAMAAAAVAA4AAgACAAMAAAAWAA4AAgACAAMAAAAXAA4AAgACAAMAAAAYAA4AAgACAAMAAAAZAA4AAgACAAMAAAAaAA4AAgACAAMAAAD8/w4AAgACAAMAAAD9/w4AAgACAAMAAAD+/w4AAgACAAMAAAD//w4AAgACAAMAAAAbAA4AAgACAAMAAAAcAA4AAgACAAMAAAAdAA4AAgACAAMAAAA=")
 
 [node name="Wall" parent="." unique_id=369864772 instance=ExtResource("6_ptf86")]
 position = Vector2(-5, 212)
