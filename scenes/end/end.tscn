@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://eu2bk7lq076" path="res://assets/text_theme.tres" id="1_8srqk"]
 [ext_resource type="Texture2D" uid="uid://df5evfi7v2uq6" path="res://scenes/end/end_screen_spritesheet.png" id="1_orl65"]
+[ext_resource type="Script" uid="uid://c2edl1kvvw07n" path="res://scenes/end/back_to_menu.gd" id="2_p1qr3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8srqk"]
 atlas = ExtResource("1_orl65")
@@ -109,9 +110,10 @@ offset_right = 134.0
 offset_bottom = 351.0
 theme = ExtResource("1_8srqk")
 
-[node name="Button" type="Button" parent="CanvasLayer/Options" unique_id=1170365857]
+[node name="BackToMenu" type="Button" parent="CanvasLayer/Options" unique_id=1170365857]
 layout_mode = 2
 text = "Back to Menu"
+script = ExtResource("2_p1qr3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1569854302]
 position = Vector2(320, 180)
