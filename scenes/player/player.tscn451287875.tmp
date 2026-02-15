@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://0ijfod5uxjbd"]
+
+[ext_resource type="Script" uid="uid://dd0dd3bpqcn12" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="Texture2D" uid="uid://bghkq6oamqf40" path="res://scenes/player/Sprite-0009.png" id="2_dovo2"]
+[ext_resource type="Script" uid="uid://b6p3xg02blqnc" path="res://scenes/player/states/idle.gd" id="4_75vfm"]
+[ext_resource type="Script" uid="uid://xo4mcr3tcqgv" path="res://scenes/player/states/move.gd" id="5_0owmy"]
+[ext_resource type="Script" uid="uid://7dbedpr7g2bb" path="res://scenes/player/states/player_state_machine.gd" id="6_75vfm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dovo2"]
+height = 38.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8afob"]
+radius = 32.0
+
+[node name="Player" type="CharacterBody2D" unique_id=2002699047]
+z_index = 1
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_8afob")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=954679802]
+texture_filter = 1
+position = Vector2(0, -4)
+texture = ExtResource("2_dovo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1764915389]
+shape = SubResource("CapsuleShape2D_dovo2")
+
+[node name="Interaction" type="Area2D" parent="." unique_id=2038586233]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction" unique_id=672323205]
+shape = SubResource("CircleShape2D_8afob")
+
+[node name="PlayerStateMachine" type="Node2D" parent="." unique_id=987253764 node_paths=PackedStringArray("state")]
+script = ExtResource("6_75vfm")
+state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="PlayerStateMachine" unique_id=1580986199]
+script = ExtResource("4_75vfm")
+metadata/_custom_type_script = "uid://b6p3xg02blqnc"
+
+[node name="Move" type="Node2D" parent="PlayerStateMachine" unique_id=1837510424]
+script = ExtResource("5_0owmy")
+metadata/_custom_type_script = "uid://xo4mcr3tcqgv"

@@ -57,7 +57,8 @@ _data = {
 &"rusty": SubResource("Animation_06n0q")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pcvi"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1pcvi"]
+radius = 31.0
 
 [node name="Gear" type="Area2D" unique_id=1252970662]
 texture_filter = 1
@@ -74,4 +75,4 @@ texture = ExtResource("2_1pcvi")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=322811698]
-shape = SubResource("RectangleShape2D_1pcvi")
+shape = SubResource("CircleShape2D_1pcvi")
