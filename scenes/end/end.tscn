@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://eu2bk7lq076" path="res://assets/text_theme.tres" id="1_8srqk"]
 [ext_resource type="Texture2D" uid="uid://df5evfi7v2uq6" path="res://scenes/end/end_screen_spritesheet.png" id="1_orl65"]
 [ext_resource type="Script" uid="uid://c2edl1kvvw07n" path="res://scenes/end/back_to_menu.gd" id="2_p1qr3"]
+[ext_resource type="AudioStream" uid="uid://bx12tnj2ewuao" path="res://sounds/victory/Final Fantasy Victory Fanfare - QuickSounds.com.mp3" id="4_hqgb4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8srqk"]
 atlas = ExtResource("1_orl65")
@@ -83,6 +84,7 @@ animations = [{
 }]
 
 [node name="End" type="Node2D" unique_id=494480873]
+texture_filter = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=811996813]
 
@@ -116,5 +118,11 @@ text = "Back to Menu"
 script = ExtResource("2_p1qr3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1569854302]
+texture_filter = 1
 position = Vector2(320, 180)
 sprite_frames = SubResource("SpriteFrames_klmf7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1164582393]
+stream = ExtResource("4_hqgb4")
+volume_db = -10.0
+autoplay = true
