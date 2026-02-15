@@ -1,8 +1,13 @@
 class_name Player
 extends CharacterBody2D
 
+signal clean
+
 @onready var interaction: Area2D = %Interaction
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var sprite2d: Sprite2D = %Sprite2D
+@onready var clean_anim_left: Sprite2D = %CleanAnimationLeft
+@onready var clean_anim_right: Sprite2D = %CleanAnimationRight
 
 var gravity: float = 20
 var speed: int = 250
@@ -17,13 +22,21 @@ var jump_speed: int = 320
 var jump_timer: float = 0.0
 var jump_velocity: float = 0.0
 
+var current_gear: Gear
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		var areas: Array[Area2D] = interaction.get_overlapping_areas()
 		for area in areas:
 			if area is Interactable:
 				var interactable: Interactable = area
-				interactable.interact()
+				if area is Gear:
+					current_gear = area
+					if current_gear.is_clean:
+						break
+					clean.emit()
+				else:
+					interactable.interact()
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump_velocity = -jump_speed - abs(direction_x * speed) / 4
@@ -39,13 +52,6 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += gravity
 		animate_fall()
-	
-	direction_x = 0
-	
-	if Input.is_action_pressed("move_left"):
-		direction_x += -1
-	if Input.is_action_pressed("move_right"):
-		direction_x += 1
 	
 	velocity.x = lerpf(velocity.x, direction_x * speed, 0.1)
 	
