@@ -83,4 +83,4 @@ common/physics_interpolation=true
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.5764706, 0.49411765, 0.33333334, 1)
+environment/defaults/default_clear_color=Color(0.52, 0.37301335, 0.24440001, 1)
