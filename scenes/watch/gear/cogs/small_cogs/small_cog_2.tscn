@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://deooywtwq7sh4"]
+
+[ext_resource type="Script" uid="uid://cqfjo5y8lphro" path="res://scenes/watch/gear/gear.gd" id="1_wqvso"]
+[ext_resource type="Texture2D" uid="uid://yogjg158lpol" path="res://scenes/watch/gear/cogs/small_cogs/cog_2_spritesheet.png" id="2_r3gww"]
+
+[sub_resource type="Animation" id="Animation_1pcvi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_v7h5k"]
+resource_name = "clean"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_06n0q"]
+resource_name = "rusty"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3k1ol"]
+_data = {
+&"RESET": SubResource("Animation_1pcvi"),
+&"clean": SubResource("Animation_v7h5k"),
+&"rusty": SubResource("Animation_06n0q")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1pcvi"]
+radius = 18.0
+
+[node name="SmallCog2" type="Area2D" unique_id=1252970662]
+texture_filter = 1
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_wqvso")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1196318819]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_3k1ol")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=386735606]
+texture = ExtResource("2_r3gww")
+hframes = 3
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=322811698]
+shape = SubResource("CircleShape2D_1pcvi")
