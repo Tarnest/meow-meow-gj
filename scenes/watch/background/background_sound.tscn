@@ -9,8 +9,10 @@
 stream = ExtResource("1_p41j4")
 volume_db = -9.313
 autoplay = true
+max_distance = 1000000.0
 
 [node name="Ticking" type="AudioStreamPlayer2D" parent="." unique_id=1184153228]
 stream = ExtResource("2_6h67s")
 volume_db = -10.0
 autoplay = true
+max_distance = 1000000.0
