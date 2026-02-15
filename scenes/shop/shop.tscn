@@ -1,7 +1,6 @@
-[gd_scene format=3 uid="uid://da6760vadt1w7"]
+[gd_scene format=4 uid="uid://da6760vadt1w7"]
 
 [ext_resource type="PackedScene" uid="uid://0ijfod5uxjbd" path="res://scenes/player/player.tscn" id="1_100s2"]
-[ext_resource type="PackedScene" uid="uid://basnad4clu0t7" path="res://scenes/shop/ground/ground.tscn" id="1_jp048"]
 [ext_resource type="PackedScene" uid="uid://bathwhr7vp2b4" path="res://scenes/shop/entry_point/entry_point.tscn" id="2_qaxay"]
 [ext_resource type="PackedScene" uid="uid://0r2x60uhgp2f" path="res://scenes/watch/watch.tscn" id="3_7lxhl"]
 [ext_resource type="PackedScene" uid="uid://eboqofrubrvp" path="res://scenes/tilemap/tile_map_layer.tscn" id="5_ctpgp"]
@@ -9,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://6j3oblnpbkjd" path="res://scenes/shop/shop_bg_layer_3.png" id="7_tp26b"]
 [ext_resource type="Texture2D" uid="uid://b8osamocf7xal" path="res://scenes/shop/shop_bg_layer_2_spritesheet.png" id="8_vk20h"]
 [ext_resource type="Texture2D" uid="uid://ningaa5rnx6q" path="res://scenes/shop/shop_bg_layer_1.png" id="9_8qn5i"]
+[ext_resource type="PackedScene" uid="uid://cdlr664gmbgxw" path="res://scenes/shop/arrow/arrow.tscn" id="9_tp26b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dww4p"]
 atlas = ExtResource("8_vk20h")
@@ -67,6 +67,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_tp26b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(477, 135)]
+}
+
+[sub_resource type="Animation" id="Animation_vk20h"]
+resource_name = "arrow_bob"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(477, 135), Vector2(477, 117)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qn5i"]
+_data = {
+&"RESET": SubResource("Animation_tp26b"),
+&"arrow_bob": SubResource("Animation_vk20h")
+}
+
 [node name="Shop" type="Node2D" unique_id=2133320849]
 
 [node name="Player" parent="." unique_id=2002699047 instance=ExtResource("1_100s2")]
@@ -78,9 +116,7 @@ position = Vector2(499, 287)
 switch_to_scene = ExtResource("3_7lxhl")
 
 [node name="TileMapLayer" parent="." unique_id=1532222105 instance=ExtResource("5_ctpgp")]
-
-[node name="Ground" parent="." unique_id=523757785 instance=ExtResource("1_jp048")]
-position = Vector2(229, 349)
+tile_map_data = PackedByteArray("AAAAAA0AAgACAAMAAAABAA0AAgACAAMAAAACAA0AAgACAAMAAAADAA0AAgACAAMAAAAEAA0AAgACAAMAAAAFAA0AAgACAAMAAAAGAA0AAgACAAMAAAAHAA0AAgACAAMAAAAIAA0AAgACAAMAAAAJAA0AAgACAAMAAAAKAA0AAgACAAMAAAALAA0AAgACAAMAAAAMAA0AAgACAAMAAAANAA0AAgACAAMAAAAOAA0AAgACAAMAAAAPAA0AAgACAAMAAAAQAA0AAgACAAMAAAARAA0AAgACAAMAAAASAA0AAgACAAMAAAATAA0AAgACAAMAAAAUAA0AAgACAAMAAAAVAA0AAgACAAMAAAAWAA0AAgACAAMAAAAXAA0AAgACAAMAAAAYAA0AAgACAAMAAAAZAA0AAgACAAMAAAAaAA0AAgACAAMAAAAAAA4AAgACAAMAAAABAA4AAgACAAMAAAACAA4AAgACAAMAAAADAA4AAgACAAMAAAAEAA4AAgACAAMAAAAFAA4AAgACAAMAAAAGAA4AAgACAAMAAAAHAA4AAgACAAMAAAAIAA4AAgACAAMAAAAJAA4AAgACAAMAAAAKAA4AAgACAAMAAAALAA4AAgACAAMAAAAMAA4AAgACAAMAAAANAA4AAgACAAMAAAAOAA4AAgACAAMAAAAPAA4AAgACAAMAAAAQAA4AAgACAAMAAAARAA4AAgACAAMAAAASAA4AAgACAAMAAAATAA4AAgACAAMAAAAUAA4AAgACAAMAAAAVAA4AAgACAAMAAAAWAA4AAgACAAMAAAAXAA4AAgACAAMAAAAYAA4AAgACAAMAAAAZAA4AAgACAAMAAAAaAA4AAgACAAMAAAD8/w4AAgACAAMAAAD9/w4AAgACAAMAAAD+/w4AAgACAAMAAAD//w4AAgACAAMAAAAbAA4AAgACAAMAAAAcAA4AAgACAAMAAAAdAA4AAgACAAMAAAA=")
 
 [node name="Wall" parent="." unique_id=369864772 instance=ExtResource("6_ptf86")]
 position = Vector2(-5, 212)
@@ -93,16 +129,29 @@ scroll_offset = Vector2(319, 183)
 
 [node name="Ladder" type="Sprite2D" parent="Parallax2D" unique_id=1471574235]
 z_index = 2
+texture_filter = 1
 scale = Vector2(1.03, 1.03)
 texture = ExtResource("7_tp26b")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D" unique_id=1623426409]
+[node name="CustomerArm" type="AnimatedSprite2D" parent="Parallax2D" unique_id=1623426409]
 z_index = 1
+texture_filter = 1
+position = Vector2(0, -9)
 scale = Vector2(1.03, 1.03)
 sprite_frames = SubResource("SpriteFrames_36j3v")
 autoplay = "default"
 
 [node name="CustomerBody" type="Sprite2D" parent="Parallax2D" unique_id=1529392284]
 z_index = -1
+texture_filter = 1
 scale = Vector2(1.03, 1.03)
 texture = ExtResource("9_8qn5i")
+
+[node name="Arrow" parent="." unique_id=324135660 instance=ExtResource("9_tp26b")]
+z_index = 5
+position = Vector2(477, 135)
+scale = Vector2(0.8, 0.8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow" unique_id=581108976]
+libraries/ = SubResource("AnimationLibrary_8qn5i")
+autoplay = &"arrow_bob"

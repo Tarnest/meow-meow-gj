@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cdlr664gmbgxw"]
+
+[ext_resource type="Texture2D" uid="uid://b1hy2aqmvode7" path="res://scenes/shop/arrow/arrow_sprite.png" id="1_cvvr5"]
+
+[node name="Arrow" type="Node2D" unique_id=324135660]
+
+[node name="ArrowSprite" type="Sprite2D" parent="." unique_id=161541632]
+texture_filter = 1
+position = Vector2(21, 53)
+texture = ExtResource("1_cvvr5")
