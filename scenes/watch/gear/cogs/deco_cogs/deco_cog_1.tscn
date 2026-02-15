@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dt3p05ik6a1b6"]
+
+[ext_resource type="Texture2D" uid="uid://cebguek7xwmcw" path="res://scenes/watch/gear/cogs/deco_cogs/Dark_cog_1.png" id="1_hi372"]
+
+[node name="DecoCog1" type="Sprite2D" unique_id=599109763]
+z_index = -1
+texture_filter = 1
+texture = ExtResource("1_hi372")
