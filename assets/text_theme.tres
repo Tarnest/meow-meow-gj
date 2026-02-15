@@ -1,0 +1,22 @@
+[gd_resource type="Theme" format=3 uid="uid://eu2bk7lq076"]
+
+[ext_resource type="FontFile" uid="uid://d0xogvsjni6mv" path="res://assets/alagard.ttf" id="1_lbl2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0stv2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stwfd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqbev"]
+
+[resource]
+Button/colors/font_color = Color(0.74509805, 0.59607846, 0.34509805, 1)
+Button/colors/font_outline_color = Color(0.84313726, 0.81960785, 0.67058825, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_lbl2b")
+Button/styles/hover = SubResource("StyleBoxEmpty_0stv2")
+Button/styles/normal = SubResource("StyleBoxEmpty_stwfd")
+Button/styles/pressed = SubResource("StyleBoxEmpty_eqbev")
+Label/colors/font_color = Color(0.74509805, 0.59607846, 0.34509805, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 0)
+Label/font_sizes/font_size = 48
+Label/fonts/font = ExtResource("1_lbl2b")
