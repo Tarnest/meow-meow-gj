@@ -4,7 +4,7 @@ extends Node2D
 @onready var gears: Node2D = %Gears
 @onready var gear_count_label: Label = $CanvasLayer/GearCounter/MarginContainer/GearCounter/GearCountLabel
 
-var num_gears_curr: int = 9
+var num_gears_curr: int = 8
 
 func _ready() -> void:
 	Global.check_gears.connect(check_gears)
