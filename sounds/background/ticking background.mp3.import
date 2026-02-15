@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbawq1jg1g1id"
+path="res://.godot/imported/ticking background.mp3-81ff9788f24bc65c2e3f4f5c3573898e.mp3str"
+
+[deps]
+
+source_file="res://sounds/background/ticking background.mp3"
+dest_files=["res://.godot/imported/ticking background.mp3-81ff9788f24bc65c2e3f4f5c3573898e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

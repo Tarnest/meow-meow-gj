@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://1w4o3f0ijul6"]
+
+[ext_resource type="AudioStream" uid="uid://dqiuv7t8x8iui" path="res://sounds/gear/running-gear-loop.mp3" id="1_x8bgo"]
+
+[node name="GearFixedSound" type="AudioStreamPlayer2D" unique_id=68984597]
+stream = ExtResource("1_x8bgo")
+volume_db = -10.0

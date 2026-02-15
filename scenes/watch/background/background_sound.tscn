@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cdw23mtjtfn1d"]
+
+[ext_resource type="AudioStream" uid="uid://ysklvnqhys3u" path="res://sounds/background/background music.mp3" id="1_p41j4"]
+[ext_resource type="AudioStream" uid="uid://bbawq1jg1g1id" path="res://sounds/background/ticking background.mp3" id="2_6h67s"]
+
+[node name="BackgroundSound" type="Node2D" unique_id=518496341]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1161982013]
+stream = ExtResource("1_p41j4")
+volume_db = -9.313
+autoplay = true
+
+[node name="Ticking" type="AudioStreamPlayer2D" parent="." unique_id=1184153228]
+stream = ExtResource("2_6h67s")
+volume_db = -13.194
+autoplay = true
