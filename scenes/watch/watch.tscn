@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://cp8h1ky1fwvhs" path="res://scenes/watch/watch.gd" id="1_d4mxv"]
 [ext_resource type="PackedScene" uid="uid://bscvb5cnf24kd" path="res://scenes/watch/gear/gear.tscn" id="1_dfm8d"]
 [ext_resource type="PackedScene" uid="uid://0ijfod5uxjbd" path="res://scenes/player/player.tscn" id="2_6srqp"]
+[ext_resource type="PackedScene" uid="uid://bm5f4np6qwqrl" path="res://scenes/start/start.tscn" id="2_nv6nr"]
 [ext_resource type="PackedScene" uid="uid://eboqofrubrvp" path="res://scenes/tilemap/tile_map_layer.tscn" id="5_nv6nr"]
 
 [node name="Watch" type="Node2D" unique_id=1601395757]
 script = ExtResource("1_d4mxv")
+start_scene = ExtResource("2_nv6nr")
 
 [node name="Gears" type="Node2D" parent="." unique_id=1380636468]
 unique_name_in_owner = true
